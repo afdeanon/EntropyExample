@@ -26,10 +26,10 @@ def file_entropy(filepath, block_size=None):
     if block_size is None:
         return entropy(data)
 
-    return [
+    return {i:
         entropy(data[i:i + block_size])
         for i in range(0, len(data), block_size)
-    ]
+    }
 
 def byte_distribution(data):
     counts = {}
